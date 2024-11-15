@@ -74,6 +74,30 @@ const projects = [
     impact: "Streamlining development processes",
     technologies: ["Node.js", "TypeScript", "VS Code API"],
     category: "Developer Tools"
+  },
+  {
+    title: "Code Review AI Assistant",
+    description: "An AI-powered code review tool that automatically analyzes pull requests, suggests improvements, and helps maintain code quality standards.",
+    status: "Planning",
+    impact: "Improving code quality and developer productivity",
+    technologies: ["Python", "Machine Learning", "GitHub API", "Natural Language Processing"],
+    category: "AI/ML"
+  },
+  {
+    title: "Real-time Collaboration IDE",
+    description: "A web-based IDE that enables real-time collaborative coding, featuring live code sharing, video chat, and integrated version control.",
+    status: "Planning",
+    impact: "Enhancing remote pair programming and teaching",
+    technologies: ["WebRTC", "Socket.io", "React", "Monaco Editor"],
+    category: "Developer Tools"
+  },
+  {
+    title: "Smart Documentation Generator",
+    description: "An intelligent system that automatically generates and maintains technical documentation from codebases, with support for multiple programming languages.",
+    status: "Planning",
+    impact: "Streamlining documentation processes for development teams",
+    technologies: ["TypeScript", "Natural Language Processing", "GraphQL", "Next.js"],
+    category: "Developer Tools"
   }
 ]
 
