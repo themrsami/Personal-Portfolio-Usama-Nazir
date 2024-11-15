@@ -64,7 +64,7 @@ portfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone [your-repo-url]
+   git clone https://github.com/themrsami/Personal-Portfolio-Usama-Nazir.git
    cd portfolio
    ```
 
