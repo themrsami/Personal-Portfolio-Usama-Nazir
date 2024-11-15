@@ -1,0 +1,16 @@
+{
+  "name": "Usama Nazir Portfolio",
+  "short_name": "Usama Portfolio",
+  "description": "Professional full-stack developer portfolio showcasing expertise in React, Next.js, TypeScript, and modern web development.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1F2937",
+  "theme_color": "#1F2937",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

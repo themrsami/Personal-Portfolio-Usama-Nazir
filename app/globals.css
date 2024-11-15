@@ -2,20 +2,269 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(240, 10%, 3.9%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240, 10%, 3.9%);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(240, 10%, 3.9%);
+    --primary: hsl(240, 5.9%, 10%);
+    --primary-foreground: hsl(0, 0%, 98%);
+    --secondary: hsl(240, 4.8%, 95.9%);
+    --secondary-foreground: hsl(240, 5.9%, 10%);
+    --muted: hsl(240, 4.8%, 95.9%);
+    --muted-foreground: hsl(240, 3.8%, 46.1%);
+    --accent: hsl(240, 4.8%, 95.9%);
+    --accent-foreground: hsl(240, 5.9%, 10%);
+    --radius: 0.5rem;
+  }
+
+  ::selection {
+    @apply bg-indigo-500/30 text-indigo-900 dark:bg-indigo-500/30 dark:text-indigo-200;
+  }
+
+  ::-moz-selection {
+    @apply bg-indigo-500/30 text-indigo-900 dark:bg-indigo-500/30 dark:text-indigo-200;
+  }
+
+  .dark {
+    --background: hsl(240, 10%, 3.9%);
+    --foreground: hsl(0, 0%, 98%);
+    --card: hsl(240, 10%, 3.9%);
+    --card-foreground: hsl(0, 0%, 98%);
+    --popover: hsl(240, 10%, 3.9%);
+    --popover-foreground: hsl(0, 0%, 98%);
+    --primary: hsl(0, 0%, 98%);
+    --primary-foreground: hsl(240, 5.9%, 10%);
+    --secondary: hsl(240, 3.7%, 15.9%);
+    --secondary-foreground: hsl(0, 0%, 98%);
+    --muted: hsl(240, 3.7%, 15.9%);
+    --muted-foreground: hsl(240, 5%, 64.9%);
+    --accent: hsl(240, 3.7%, 15.9%);
+    --accent-foreground: hsl(0, 0%, 98%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-neutral-200 dark:border-neutral-700;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Blog Post Styles */
+.blog-content {
+  max-width: 100%;
+  line-height: 1.75;
+  color: #1a202c;
+}
+
+.dark .blog-content {
+  color: #f7fafc;
+}
+
+/* Headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.dark .blog-content h1,
+.dark .blog-content h2,
+.dark .blog-content h3,
+.dark .blog-content h4,
+.dark .blog-content h5,
+.dark .blog-content h6 {
+  color: #f7fafc;
+}
+
+.blog-content h1 { font-size: 2.5rem; }
+.blog-content h2 { font-size: 2rem; }
+.blog-content h3 { font-size: 1.75rem; }
+.blog-content h4 { font-size: 1.5rem; }
+.blog-content h5 { font-size: 1.25rem; }
+.blog-content h6 { font-size: 1.1rem; }
+
+/* Paragraphs and Lists */
+.blog-content p,
+.blog-content ul,
+.blog-content ol {
+  margin: 1.25rem 0;
+  line-height: 1.75;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+}
+
+.blog-content ul { list-style-type: disc; }
+.blog-content ol { list-style-type: decimal; }
+
+.blog-content li {
+  margin: 0.5rem 0;
+}
+
+/* Links */
+.blog-content a {
+  color: #3182ce;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-content a:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}
+
+.dark .blog-content a {
+  color: #63b3ed;
+}
+
+.dark .blog-content a:hover {
+  color: #90cdf4;
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+  border-left: 4px solid #e2e8f0;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: #4a5568;
+  font-style: italic;
+}
+
+.dark .blog-content blockquote {
+  border-left-color: #4a5568;
+  color: #a0aec0;
+}
+
+/* Code Blocks */
+.blog-content pre {
+  background-color: #2d3748;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.blog-content pre code {
+  color: #f7fafc;
+  background: none;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Inline Code */
+.blog-content code {
+  background-color: #edf2f7;
+  color: #2d3748;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.dark .blog-content code {
+  background-color: #2d3748;
+  color: #f7fafc;
+}
+
+/* Tables */
+.blog-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.blog-content th,
+.blog-content td {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.blog-content th {
+  background-color: #f7fafc;
+  font-weight: 600;
+}
+
+.dark .blog-content th {
+  background-color: #2d3748;
+}
+
+.dark .blog-content th,
+.dark .blog-content td {
+  border-color: #4a5568;
+}
+
+/* Horizontal Rule */
+.blog-content hr {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0;
+}
+
+.dark .blog-content hr {
+  border-top-color: #4a5568;
+}
+
+/* Images */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Theme transition classes */
+.theme-transition {
+  @apply transition-all duration-300;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 8s ease infinite;
+  background-size: 200% 200%;
 }
