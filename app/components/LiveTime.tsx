@@ -14,7 +14,7 @@ export default function LiveTime() {
   }, [])
 
   return (
-    <div className="fixed top-4 left-4 z-50 bg-white/10 backdrop-blur-md dark:bg-gray-900/50 px-4 py-2 rounded-full border border-gray-200/20 dark:border-white/10 shadow-lg">
+    <div className="fixed bottom-4 right-4 z-50 bg-white/10 backdrop-blur-md dark:bg-gray-900/50 px-4 py-2 rounded-full border border-gray-200/20 dark:border-white/10 shadow-lg hidden md:block">
       <div className="flex flex-col items-center">
         <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {time.toLocaleTimeString('en-US', {
